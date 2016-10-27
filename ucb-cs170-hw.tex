@@ -1,4 +1,6 @@
+%~~~~~ M358K Review ~~~~~
 \documentclass[11pt]{article}
+%~~~~~ Packages ~~~~~~ 
 \usepackage{amsmath,textcomp,amssymb,geometry,graphicx,enumerate}
 \usepackage{algorithm} % Boxes/formatting around algorithms
 \usepackage[noend]{algpseudocode} % Algorithms
@@ -9,17 +11,59 @@
     filecolor=magenta,      
     urlcolor=blue,
 }
+\RequirePackage{fix-cm}                                  
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{mdframed}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,backgrounds}
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{mathptmx}                             
+\usepackage{latexsym}
+\def\Name{Lauren A. Frisby}  
+\def\EID{LAF692}  
+\def\Login{M358K} 
+\def\Review{Review} 
+\def\Session{Fall 2015}
+%~~~~~~ Commands ~~~~~~
+% \od
+\newcommand{\od}[3][]{\ensuremath{\frac{\mathrm{d}^{#1} {#2}}{\mathrm{d}{#3}^{#1}}}}
+% \todo
+\newcommand{\todo}[1]{{\huge\color{red}TODO {#1}}}
+% \Query
+\newcommand{\Query}[1]{{\huge\color{green}Question: {#1}}}
+% \TwoNote
+\newcommand{\TwoNote}[4]{$$\text{Note:}\quad\left\{\begin{aligned} {#1} \text{\quad #2} \\
+{#3} \text{\quad #4} \\ \end{aligned}\right\}.$$}
+% \OneNote
+\newcommand{\OneNote}[2]{$$\text{Note:}\quad\left\{\begin{aligned} {#1} \text{\quad #2} \end{aligned}\right\}.$$}
+% \ZeroNote
+\newcommand{\ZeroNote}[1]{$$\text{Note:}\quad\left\{\begin{aligned} {#1} \end{aligned}\right\}.$$}
+% \Noir
+\newcommand{\Noir}{\color{black}}
+% \Vertt
+\newcommand{\Vertt}{\color{green}}
+% \Rouge 
+\newcommand{\Rouge}{\color{red}}
+% \Gris
+\definecolor{silver}{hsb}{.0,.10,.43}
+\newcommand{\Gris}{\color{silver}}
+% \Rose
+\definecolor{pink}{hsb}{3.16,0.87,0.80}
+\newcommand{\Rose}{\color{pink}}
+% Text Box
+\renewcommand{\thefigure}{\Roman{figure}}
+\DeclareMathOperator*{\argmax}{arg\,max}
 
-\def\Name{PUT SOMETHING HERE}  % Your name
-\def\SID{PUT SOMETHING HERE}  % Your student ID number
-\def\Login{PUT SOMETHING HERE} % Your login (your class account, cs170-xy)
-\def\Homework{N} % Number of Homework
-\def\Session{Spring 2015}
-
-
-\title{CS170 -- Fall 2016 --- Homework \Homework}
-\author{\Name, SID \SID, \texttt{\Login}}
-\markboth{CS170--\Session\  Homework \Homework\ \Name}{CS170--\Session\ Homework \Homework\ \Name, \texttt{\Login}}
+%~~~~~~ Article Format ~~~~~~
+\title{M358K -- Fall 2015 --- Final Review \Review}
+\author{\Name, EID \EID, \texttt{\Login}}
+\markboth{M358K Final--\Session\  Review \Review\ \Name}{M358K--\Session\ Final Review \Review\ \Name, \texttt{\Login}}
 \pagestyle{myheadings}
 \date{}
 
@@ -33,27 +77,151 @@
 \oddsidemargin=0.25in
 \evensidemargin=0.25in
 
-
+%~~~~ Directory ~~~~~
 \begin{document}
 \maketitle
+\section*{1.From Randomness to Probability}
+\section*{2.Probability Rules}
+\section*{3.Random Variables}
+\section*{4.Sampling Distribution Models}
+\section*{5.Confidence Intervals for Proportions}
+\section*{6.Testing Hypotheses about Proportions}
+\section*{7.More About Test and Intervals}
+\section*{8. Comparing Two Proportions}
 
-Collaborators: PUT SOMETHING HERE (LIST OF YOUR COLLABORATORS, OR WRITE NONE)
-
-\section*{1. First Question}
-\begin{qparts}
-\item
-Your answer to the first part.
-
-\item
-Your answer to the second part.
-
-\end{qparts}
-
-
-
+%~~~~ From Randomness to Probability ~~~~~
 \newpage
+\section*{1. From Randomness to Probability}
+{\Large{$$\text{Random Phenomena} \rightarrow \text{Trial} \rightarrow \text{Outcome} \rightarrow \text{Event} \rightarrow \text{Sample Space}$$}}
+ \renewcommand{\labelenumii}{\Roman{enumii}}
+   \subsection*{Definitions}
+   \begin{enumerate}
+     \item \textbf{Phenomenon} consists of trials. Each trial has an outcome
+     \item \textbf{Outcomes} combine to make events
+     \item \textbf{Random Phenomena} we know what outcomes could happen not which will
+     \item \textbf{Trial} single attempt of random phenomena
+     \item \textbf{Outcome} measured value of trial
+     \item \textbf{Event} combination of outcomes
+     \item \textbf{Sample Space} collection of all possible outcomes
+   \end{enumerate}
+   
+%~~~~~~ Subsections ~~~~~~
+   \subsection*{Law of Large Numbers}
+   As number of independent trials increases the long run relative frequency of repeated events gets closer and closer to a single value
+   \subsection*{Empirical Probability}
+   Repeatedly observing the events' outcome for any event $A$.
+     \begin{equation}
+     P(A)= \frac{\text{number of times A occurs}} {\text{Total Number of trials}}
+     \end{equation}
+
+    \subsection*{Probability Assignment Rule} 
+    Set of all possible outcomes of a trial must have probability equal to one
+        \begin{equation}
+        P(S)=1
+        \end{equation}
+        
+     \subsection*{Complement Rule}
+         \begin{equation}
+         1-P(S)=P(S)^c         \end{equation}
+    
+    \subsection*{Mutually Disjoint}
+        \begin{equation}
+        P(A\text{ or }B) = P(A)P(B)
+        \end{equation}
+        
+%~~~~~~ Mine ~~~~~~  
+\pagestyle{empty}
+\def\rectangle{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
+\def\uncircle{(1,1) circle (1cm)}
+\def\deuxcircle{(3,3) circle (1cm)}
+\begin{tikzpicture}
+    \begin{scope},[shift= {3cm, -5cm)}, fill opacity=0.5]
+        \fill[red] \uncircle;
+        \fill[green] \deuxcircle;
+        \draw \rectangle;
+        \draw \uncircle (1,1) circle (1cm) node[text= black, below] {$B$};
+        \draw \deuxcircle (3,3) circle (1cm) node[text =black, above] {$A$};
+     \end{scope}
+\end{tikzpicture};
+
+\begin{equation}
+    1-P(A)=P(B) \\
+    1-P(B)=P(A)
+\end{equation}
+
+\subsection*{Multiplication Rule}
+If both are independent the probability of both happening is 
+\begin{equation}
+P(A \text{ and } B)=P(A) \times P(B)
+\end{equation}
+
+\pagestyle{empty}
+\def\rectangle{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
+\def\uncircle{(1,1) circle (1cm)}
+\def\deuxcircle{(3,3) circle (1cm)}
+\def\troiscircle{ (2,2) circle (1cm)}
+\begin{tikzpicture}
+    \begin{scope},[shift= {3cm, -5cm)}, fill opacity=0.005]
+        \fill[red] \uncircle;
+        \fill[green] \deuxcircle;
+        \fill[blue] \troiscircle;
+        \draw \rectangle;
+        \draw \uncircle (1,1) circle (1cm) node[text=black, above] {$B$};
+        \draw \deuxcircle (3,3) circle (1cm) node[text= black, above] {$A$};
+        \draw \troiscircle (2,2) circle (1cm) node[text= black, above] {$C$};
+     \end{scope}
+\end{tikzpicture};
+
+
+
+%~~~~ Probability Rules ~~~~~
+\newpage
+ \section*{Probability Rules}
+ \subsection*{Generalized Addition Rule}
+ \begin{equation}
+ P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)
+ \end{equation}
+
+
+\pagestyle{empty}
+\def\rectangledeux{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
+\def\circleun{(1,1) circle (1cm)}
+\def\circledeux{(2,2) circle (1cm)}
+\begin{tikzpicture}
+     \begin{scope},[shift= {3cm, -5cm)}, fill opacity=0.005]
+     \fill[red]\circleun;
+     \fill[green] \circledeux;
+     \draw \rectangledeux;
+     \draw \circleun (1,1) circle (1cm) node[text=black, above] {$B$};
+     \draw \circledeux (3,3) circle (1cm) node[text= black, above] {$A$};
+     \end{scope}
+\end{tikzpicture};
+
+
+%~~~~ Random Variables ~~~~~
+\newpage
+ \section*{Random Variables}
+ %~~~~ Sampling Distribution Models ~~~~~
+ \newpage
+ \section*{4.Sampling Distribution Models}
+ %~~~~~~ COnfidence Intervals for Proportions ~~~~~~
+  \newpage
+\section*{5.Confidence Intervals for Proportions}
+%~~~~~~ Testing Hypotheses about Proportions ~~~~~~
+ \newpage
+\section*{6.Testing Hypotheses about Proportions}
+%~~~~~~ More About Test and Intervals ~~~~~~
+ \newpage
+\section*{7.More About Test and Intervals}
+%~~~~~~ Comparing Two Proportions ~~~~~~
+ \newpage
+\section*{8. Comparing Two Proportions}
+%~~~~~~ Selected Exercises and Answers ~~~~~~
+\newpage 
 \section*{Question Asking for an Algorithm}
 \textbf{Main idea}\\
+\section*{Selected Exercises and Answers}
+ \renewcommand{\labelenumii}{\Roman{enumii}}
 
 Explain, in a few sentences, the key steps of your algorithm, focusing on the (usually) single key insight that would be a total giveaway to the problem if you shared it with a classmate. This is the single most important part of your solution, because if you clearly demonstrate your understanding of the solution here, the readers tend to be more forgiving of small errors elsewhere.\\
 
