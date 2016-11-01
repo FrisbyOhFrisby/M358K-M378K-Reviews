@@ -106,30 +106,44 @@
    \end{enumerate}
    
 %~~~~~~ Subsections ~~~~~~
+%~ Law of Large Numbers ~ 
    \subsection*{Law of Large Numbers}
    As number of independent trials increases the long run relative frequency of repeated events gets closer and closer to a single value
+   
+%~ Empirical Probability ~    
    \subsection*{Empirical Probability}
-   Repeatedly observing the events' outcome for any event $A$.
+   Repeatedly observing the events' outcome for any event      $A$.
      \begin{equation}
-     P(A)= \frac{\text{number of times A occurs}} {\text{Total Number of trials}}
+         P(A)= \frac{\text{number of times A occurs}}                {\text{Total Number of trials}}
      \end{equation}
-
+     
+%~ Probability Assignment Rule ~ 
     \subsection*{Probability Assignment Rule} 
-    Set of all possible outcomes of a trial must have probability equal to one
+    Set of all possible outcomes of a trial must have           probability equal to one
         \begin{equation}
-        P(S)=1
+            P(S)=1
         \end{equation}
         
+%~ Complement Rule ~        
      \subsection*{Complement Rule}
          \begin{equation}
-         1-P(S)=P(S)^c         \end{equation}
-    
+             1-P(S)=P(S)^c
+         \end{equation}
+         
+         \begin{equation}
+    \begin{split}
+    1-P(A)=P(B)\\
+    &
+    1-P(B)=P(A)
+    \end{split}
+\end{equation}
+         
+%~ Mutually Disjoint ~     
     \subsection*{Mutually Disjoint}
         \begin{equation}
-        P(A\text{ or }B) = P(A)P(B)
+            P(A\text{ or }B) = P(A)P(B)
         \end{equation}
         
-%~~~~~~ Mine ~~~~~~  
 \pagestyle{empty}
 \def\rectangle{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
 \def\uncircle{(1,1) circle (1cm)}
@@ -138,41 +152,32 @@
     \begin{scope},[shift= {3cm, -5cm)}, fill opacity=0.5]
         \fill[red] \uncircle;
         \fill[green] \deuxcircle;
-        \draw \rectangle;
-        \draw \uncircle (1,1) circle (1cm) node[text= black, below] {$B$};
-        \draw \deuxcircle (3,3) circle (1cm) node[text =black, above] {$A$};
-     \end{scope}
-\end{tikzpicture};
+        \draw \rectangle node[below] {$G$};
+        \draw \uncircle (1,1) circle (1cm) node[text= black,         below] {$B$};
+        \draw \deuxcircle (3,3) circle (1cm) node[text               =black, above] {$A$};
+     \end{scope};
+\end{tikzpicture}
 
-\begin{equation}
-    1-P(A)=P(B) \\
-    1-P(B)=P(A)
-\end{equation}
-
+%~ Multiplication Rule ~
 \subsection*{Multiplication Rule}
 If both are independent the probability of both happening is 
 \begin{equation}
-P(A \text{ and } B)=P(A) \times P(B)
+    P(A \text{ and } B)=P(A) \times P(B)
 \end{equation}
 
 \pagestyle{empty}
-\def\rectangle{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
-\def\uncircle{(1,1) circle (1cm)}
-\def\deuxcircle{(3,3) circle (1cm)}
-\def\troiscircle{ (2,2) circle (1cm)}
-\begin{tikzpicture}
-    \begin{scope},[shift= {3cm, -5cm)}, fill opacity=0.005]
-        \fill[red] \uncircle;
-        \fill[green] \deuxcircle;
-        \fill[blue] \troiscircle;
-        \draw \rectangle;
-        \draw \uncircle (1,1) circle (1cm) node[text=black, above] {$B$};
-        \draw \deuxcircle (3,3) circle (1cm) node[text= black, above] {$A$};
-        \draw \troiscircle (2,2) circle (1cm) node[text= black, above] {$C$};
-     \end{scope}
-\end{tikzpicture};
-
-
+\def\rectangleun{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
+\def\circleun{(1,2) circle (1cm)}
+\def\circledeux{(2,3) circle (1cm)}
+\begin{tikzpicture} 
+        \begin{scope},[fill opacity=0.05]
+        \fill[yellow] \circleun;
+        \fill[yellow] \circledeux;
+     \end{scope};
+     \draw \rectangleun node[below] {$H$};
+     \draw \circleun node[below] {$B$};
+     \draw \circledeux node[below] {$A$};
+\end{tikzpicture}
 
 %~~~~ Probability Rules ~~~~~
 \newpage
@@ -182,21 +187,19 @@ P(A \text{ and } B)=P(A) \times P(B)
  P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)
  \end{equation}
 
-
 \pagestyle{empty}
-\def\rectangledeux{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
-\def\circleun{(1,1) circle (1cm)}
-\def\circledeux{(2,2) circle (1cm)}
+\def\rectangleunun{(0,0)--(0,4)--(4,4)--(4,0)--cycle}
+\def\circleunun{(1,2) circle (1cm)}
+\def\circledeuxdeux{(2,3) circle (1cm)}
 \begin{tikzpicture}
-     \begin{scope},[shift= {3cm, -5cm)}, fill opacity=0.005]
-     \fill[red]\circleun;
-     \fill[green] \circledeux;
-     \draw \rectangledeux;
-     \draw \circleun (1,1) circle (1cm) node[text=black, above] {$B$};
-     \draw \circledeux (3,3) circle (1cm) node[text= black, above] {$A$};
-     \end{scope}
-\end{tikzpicture};
-
+   \draw\rectangleunun node[below] {$I$};
+   \draw \circleunun node[below] {$A$};
+   \draw \circledeuxdeux node[below] {$B$};
+   \begin{scope} [fill opacity=0.5]
+       \clip \circleunun;
+       \fill[green] \circledeuxdeux;
+    \end{scope}
+\end{tikzpicture}
 
 %~~~~ Random Variables ~~~~~
 \newpage
