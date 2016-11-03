@@ -1,5 +1,6 @@
 %~~~~~ M358K Review ~~~~~
-\documentclass[11pt]{article}
+\documentclass[12pt,a4paper]{article}
+
 %~~~~~ Packages ~~~~~~ 
 \usepackage{amsmath,textcomp,amssymb,geometry,graphicx,enumerate}
 \usepackage{algorithm} % Boxes/formatting around algorithms
@@ -25,11 +26,14 @@
 \usepackage{indentfirst}
 \usepackage{mathptmx}                             
 \usepackage{latexsym}
+
+%~~~~~~ Definitions ~~~~~~
 \def\Name{Lauren A. Frisby}  
 \def\EID{LAF692}  
 \def\Login{M358K} 
-\def\Review{Review} 
+\def\Review{} 
 \def\Session{Fall 2015}
+
 %~~~~~~ Commands ~~~~~~
 % \od
 \newcommand{\od}[3][]{\ensuremath{\frac{\mathrm{d}^{#1} {#2}}{\mathrm{d}{#3}^{#1}}}}
@@ -62,10 +66,11 @@
 
 %~~~~~~ Article Format ~~~~~~
 \title{M358K -- Fall 2015 --- Final Review \Review}
-\author{\Name, EID \EID, \texttt{\Login}}
+\author{\Name, \EID, \texttt{\Login}}
 \markboth{M358K Final--\Session\  Review \Review\ \Name}{M358K--\Session\ Final Review \Review\ \Name, \texttt{\Login}}
 \pagestyle{myheadings}
-\date{}
+\date{November 3rd, 2016
+}
 
 \newenvironment{qparts}{\begin{enumerate}[{(}a{)}]}{\end{enumerate}}
 \def\endproofmark{$\Box$}
@@ -80,14 +85,14 @@
 %~~~~ Directory ~~~~~
 \begin{document}
 \maketitle
-\section*{1.From Randomness to Probability}
-\section*{2.Probability Rules}
-\section*{3.Random Variables}
-\section*{4.Sampling Distribution Models}
-\section*{5.Confidence Intervals for Proportions}
-\section*{6.Testing Hypotheses about Proportions}
-\section*{7.More About Test and Intervals}
-\section*{8. Comparing Two Proportions}
+\section*{From Randomness to Probability}
+\section*{Probability Rules}
+\section*{Random Variables}
+\section*{Sampling Distribution Models}
+\section*{Confidence Intervals for Proportions}
+\section*{Testing Hypotheses about Proportions}
+\section*{More About Test and Intervals}
+\section*{Comparing Two Proportions}
 
 %~~~~ From Randomness to Probability ~~~~~
 \newpage
@@ -262,5 +267,5 @@ See \href{http://www-inst.eecs.berkeley.edu/~cs170/fa14/hws/instruct.pdf}{this d
 \textbf{Running time analysis}\\
 
 State your algorithm's runtime and your justification for why it is correct.
-
+%~~~~~~ Fin ~~~~~~
 \end{document}
